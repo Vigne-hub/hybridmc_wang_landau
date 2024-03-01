@@ -1,12 +1,16 @@
-{% set version = environ.get('GIT_DESCRIBE_TAG', '0.1.0').strip('v') %}
+{% if GIT_DESCRIBE_NUMBER > '0' %}
+{% set GIT_VERSION = GIT_DESCRIBE_TAG[1:] + '.post' + GIT_DESCRIBE_NUMBER %}
+{% else %}
+{% set GIT_VERSION = GIT_DESCRIBE_TAG[1:] %}
+{% endif %}
 
 package:
   name: hybridmc_wang_landau
-  version: {{ version }}
+  version: {{ GIT_VERSION  }}
 
 source:
-  git_url: https://github.com/Vigne-hub/hybridmc.git
-  git_rev: release_wang_landau
+  git_url: ../
+  #git_rev: release_wang_landau
 
 build:
   number: 0
