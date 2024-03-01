@@ -9,9 +9,7 @@ source:
 
 build:
   number: 0
-  script:
-    # install the wang landau plugin
-    - python -m pip install . -vv
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
@@ -23,6 +21,7 @@ requirements:
     - python >= 3.11
     - pip
     - pybind11
+    - setuptools
     - jinja2
   host:
     - python >=3.11
