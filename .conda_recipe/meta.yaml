@@ -21,19 +21,18 @@ requirements:
     - {{ compiler('cxx') }}  # Needed for compiling C++ code
     - cmake  # For running CMake scripts
     - ninja  # Build system used by CMake for faster builds
-    - python >=3.11  # Python is needed for running setup.py
+    - python >=3.8  # Python is needed for running setup.py
     - setuptools  # setuptools is required for setup.py
     - pybind11  # Include in build as pybind11 headers are needed at compile time
 
   host:
     - boost  # Your project links against Boost, so it needs to be in the host to be found by CMake
     - hdf5  # Similarly, HDF5 needs to be in the host to link against it
-    - python >=3.11  # Ensure Python version matches for ABI compatibility
+    - python >=3.8  # Ensure Python version matches for ABI compatibility
     - pybind11  # Include in host as project links against pybind11
 
   run:
-    - python >=3.11  # Python is obviously needed at runtime
-    - numpy  # Assuming your package uses NumPy at runtime
+    - python >=3.8  # Python is obviously needed at runtime
 
 test:
   commands:
