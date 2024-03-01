@@ -22,16 +22,16 @@ requirements:
     - ninja
     - boost
     - hdf5
-    - python >= 3.8
+    - python >= 3.11
     - pip
     - pybind11
     - jinja2
   host:
-    - python >=3.8
+    - python >=3.11
     - pybind11
     - numpy
   run:
-    - python >=3.8
+    - python >=3.11
     - numpy
 
 test:
