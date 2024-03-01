@@ -9,8 +9,8 @@ package:
   version: {{ GIT_VERSION  }}
 
 source:
-  git_url: ../
-  #git_rev: release_wang_landau
+  git_url: https://github.com/Vigne-hub/hybridmc
+  git_rev: release_wang_landau
 
 build:
   number: 0
