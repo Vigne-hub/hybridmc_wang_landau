@@ -22,7 +22,7 @@ requirements:
     - ninja
     - boost
     - hdf5
-    - python
+    - python >= 3.8
     - pip
     - pybind11
     - jinja2
@@ -33,7 +33,6 @@ requirements:
   run:
     - python >=3.8
     - numpy
-    - scipy
 
 test:
   commands:
