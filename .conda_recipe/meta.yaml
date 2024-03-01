@@ -1,0 +1,45 @@
+{% set version = environ.get('GIT_DESCRIBE_TAG', '0.1.0').strip('v') %}
+
+package:
+  name: hybridmc
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/Vigne-hub/hybridmc.git
+  git_rev: release_wang_landau
+  git_depth: 1  # Optional, to clone only the latest history
+
+build:
+  number: 0
+  script:
+    # install the wang landau plugin
+    - python -m pip install . -vv
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - boost
+    - hdf5
+    - python
+    - pip
+    - pybind11
+    - jinja2
+  host:
+    - python >=3.8
+    - pybind11
+    - numpy
+  run:
+    - python >=3.8
+    - numpy
+    - scipy
+
+test:
+  commands:
+    - "python -c 'import wang_landau'"
+
+about:
+  home: https://github.com/Vigne-hub/hybridmc
+  license: MIT
+  summary: 'Hybrid Monte Carlo simulations with C++ core and Python tools wang landau process utility.'

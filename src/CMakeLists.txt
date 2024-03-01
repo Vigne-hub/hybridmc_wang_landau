@@ -10,12 +10,6 @@ target_include_directories(hybridmc_common SYSTEM PUBLIC ${Boost_INCLUDE_DIRS} $
 
 # Assign common libraries to hybridmc_common
 target_link_libraries(hybridmc_common PUBLIC ${Boost_LIBRARIES} ${HDF5_LIBRARIES})
-#------------------------------------------------------------------------------------------------------
-
-# create executable called hybridmc that will run main.cc
-add_executable(hybridmc main.cc)
-# link all the dependancies (common libraries -- hybridmc_common) to hybridmc
-target_link_libraries(hybridmc PRIVATE hybridmc_common)
 
 #--------------------------------------------------------------
 #pybind11 method for making wang landau port:
@@ -24,10 +18,3 @@ target_link_libraries(wang_landau PRIVATE hybridmc_common)
 target_compile_definitions(wang_landau
         PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
 #------------------------------------------------------------
-#stuff for testing
-#add_executable(hybridmc_test hybridmc_test.cc hybridmc_test.cc)
-#target_link_libraries(hybridmc_test PRIVATE hybridmc_common)
-#add_test(NAME hybridmc_test COMMAND hybridmc_test)
-#-------------------------------------------------------------
-
-set_property(SOURCE main.cc APPEND PROPERTY COMPILE_DEFINITIONS VERSION="${VERSION}")

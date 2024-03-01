@@ -127,7 +127,7 @@ class CMakeBuild(build_ext):
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
     name="wang_landau",
-    version="0.0.1",
+    version=os.environ.get('GIT_DESCRIBE_TAG', '0.1.0').strip('v'),
     author="Vigneshwar Rajesh",
     author_email="vignesh.rajesh@mail.utoronto.ca",
     description="A project using pybind11 and CMake",
@@ -136,5 +136,5 @@ setup(
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     extras_require={"test": ["pytest>=6.0"]},
-    python_requires=">=3.7",
+    python_requires=">=3.8",
 )
