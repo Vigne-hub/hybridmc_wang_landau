@@ -1,11 +1,12 @@
 {% set version = environ.get('GIT_DESCRIBE_TAG', '0.1.0').strip('v') %}
 
 package:
-  name: hybridmc
+  name: hybridmc_wang_landau
   version: {{ version }}
 
 source:
-  git_url: ../
+  git_url: https://github.com/Vigne-hub/hybridmc.git
+  git_rev: release_wang_landau
 
 build:
   number: 0
