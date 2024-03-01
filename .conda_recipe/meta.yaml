@@ -5,9 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/Vigne-hub/hybridmc.git
-  git_rev: release_wang_landau
-  git_depth: 1  # Optional, to clone only the latest history
+  git_url: ../
 
 build:
   number: 0
