@@ -4,13 +4,13 @@
 # cmake version needed
 cmake_minimum_required(VERSION 3.26.4)
 
-# set params for cmale
+# set params for cmake
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # define project
-project(hardspheres LANGUAGES CXX)
+project(wang_landau_plugin LANGUAGES CXX)
 
 # find needed packages
 find_package(Boost REQUIRED COMPONENTS program_options unit_test_framework)
