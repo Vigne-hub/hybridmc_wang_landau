@@ -21,18 +21,18 @@ requirements:
     - {{ compiler('cxx') }}  # Needed for compiling C++ code
     - cmake  # For running CMake scripts
     - ninja  # Build system used by CMake for faster builds
-    - python
+    - python {{ python }}
     - setuptools  # setuptools is required for setup.py
     - pybind11  # Include in build as pybind11 headers are needed at compile time
 
   host:
     - boost  # Your project links against Boost, so it needs to be in the host to be found by CMake
     - hdf5  # Similarly, HDF5 needs to be in the host to link against it
-    - python
+    - python {{ python }}
     - pybind11  # Include in host as project links against pybind11
 
   run:
-    - python  # Python is obviously needed at runtime
+    - python {{ python }} # Python is obviously needed at runtime
 
 test:
   commands:
